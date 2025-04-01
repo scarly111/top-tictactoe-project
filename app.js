@@ -55,5 +55,43 @@ function playGame() {
     const game = new Game();
 
     let currentPlayer = player1;
+
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    function takeTurn() {
+        gameboard.displayBoard();
+        readline.question(`${currentPlayer.name}, enter a position (0-8): `, input => {
+            const position = parseInt(input);
+
+            if (position >= 0 && position <= 8 && gameboard.updateBoard(position, currentPlayer.marker)) {
+                if (game.checkWinner(gameboard.gameboard, currentPlayer.marker)) {
+                    gameboard.displayBoard();
+                    console.log(`${currentPlayer.name} wins!`);
+                    readline.close();
+                    return;
+                }
+
+                if (game.isTie(gameboard.gameboard)) {
+                    gameboard.displayBoard();
+                    console.log("It's a tie!");
+                    readline.close();
+                    return;
+                }
+
+                currentPlayer = currentPlayer === player1 ? player2 : player1;
+                takeTurn();
+            } else {
+                console.log("Invalid move, try again.");
+                takeTurn();
+            }
+        });
+    }
+
+    takeTurn();
     
 }
+
+playGame()
