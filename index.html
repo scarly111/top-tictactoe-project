@@ -18,20 +18,23 @@
     <h1>Tic-Tac-Toe</h1>
 
     <div class="board">
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
-        <div class="cell">X</div>
+        <div class="cell" data-cell data-index="0"></div>
+        <div class="cell" data-cell data-index="1"></div>
+        <div class="cell" data-cell data-index="2"></div>
+        <div class="cell" data-cell data-index="3"></div>
+        <div class="cell" data-cell data-index="4"></div>
+        <div class="cell" data-cell data-index="5"></div>
+        <div class="cell" data-cell data-index="6"></div>
+        <div class="cell" data-cell data-index="7"></div>
+        <div class="cell" data-cell data-index="8"></div>
     </div>
+
 
     <div id="displayInfo"></div>
 
-    <button onclick="restartGame()" id="restartButton">Restart</button>
+    <div class="restart">
+        <button onclick="restartGame()" id="restartButton">Restart</button>
+    </div>
 
     <script src="app.js"></script>
 </body>
