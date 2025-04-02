@@ -47,7 +47,7 @@ function Game() {
 }
 
 // Play the game
-function playGame() {
+function playTurn() {
 
     const gameboard = new Gameboard();
     const player1 = new Player('Player X', 'X');
@@ -55,11 +55,17 @@ function playGame() {
     const game = new Game();
 
     let currentPlayer = player1;
+    let gameOver = false;
 
+    const displayInfo = document.getElementById('displayInfo');
+    const restartButton = document.getElementById('restartButton');
+    const cells = document.querySelectorAll('.cell');
+
+    /* For console game
     const readline = require('readline').createInterface({
         input: process.stdin,
         output: process.stdout
-    });
+    }); 
 
     function takeTurn() {
         gameboard.displayBoard();
@@ -91,7 +97,49 @@ function playGame() {
     }
 
     takeTurn();
-    
+
+    */
+
+    function handleClick(e) {
+        
+        if (gameOver) return;
+
+        const index = e.target.dataset.index;
+
+        if (gameboard.updateBoard(index, currentPlayer.marker)) {
+            e.target.textContent = currentPlayer.marker;
+
+            if (game.checkWinner(gameboard.gameboard, currentPlayer.marker)) {
+                displayInfo.textContent = `${currentPlayer.name} wins! 🎉`;
+                gameOver = true;
+                return;
+            }
+
+            if (game.isTie(gameboard.gameboard)) {
+                displayInfo.textContent = `It's a tie! 🤝`;
+                gameOver = true;
+                return;
+            }
+
+            currentPlayer = currentPlayer === player1 ? player2 : player1;
+            displayInfo.textContent = `${currentPlayer.name}'s turn`;
+        }
+    }
+
+    function restartGame() {
+        gameboard.resetBoard();
+        cells.forEach(cell => cell.textContent = '');
+        currentPlayer = player1;
+        gameOver = false;
+        displayInfo.textContent = `${currentPlayer.name}'s turn`;
+    }
+
+    cells.forEach(cell => cell.addEventListener('click', handleClick));
+    restartButton.addEventListener('click', restartGame);
+
+    displayInfo.textContent = `${currentPlayer.name}'s turn`;
+
 }
 
-playGame()
+playTurn()
+
