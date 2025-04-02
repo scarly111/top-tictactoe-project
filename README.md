@@ -42,6 +42,7 @@ cd top-tictactoe-project
 ### 2. Open the Game
 Just open index.html in your web browser. No build tools or server required!
 
+---
 
 ## ✅ Assignment Goals (from The Odin Project)
 
