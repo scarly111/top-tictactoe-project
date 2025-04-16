@@ -1,4 +1,4 @@
-# 🎮 Tic Tac Toe – The Odin Project
+# Tic Tac Toe – The Odin Project
 
 A simple browser-based **Tic Tac Toe** game built using **HTML**, **CSS**, and **JavaScript**, as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
@@ -6,13 +6,13 @@ This project uses a modular, object-oriented approach to separate game logic and
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-👉 [View it in your browser](https://scarly111.github.io/top-tictactoe-project/)
+[View it in your browser](https://scarly111.github.io/top-tictactoe-project/)
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3 (Flexbox & Grid)
@@ -22,7 +22,7 @@ This project uses a modular, object-oriented approach to separate game logic and
 
 ---
 
-## 🧩 How It Works
+## How It Works
 
 - The `Gameboard` object handles the internal board state.
 - The `Player` object stores player information (name and marker).
@@ -31,7 +31,7 @@ This project uses a modular, object-oriented approach to separate game logic and
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone this repo
 
@@ -44,7 +44,7 @@ Just open index.html in your web browser. No build tools or server required!
 
 ---
 
-## ✅ Assignment Goals (from The Odin Project)
+## Assignment Goals (from The Odin Project)
 
 - Build a playable Tic Tac Toe game
 - Apply modular code architecture
@@ -54,7 +54,7 @@ Just open index.html in your web browser. No build tools or server required!
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 - Project built as part of the [JavaScript curriculum](https://www.theodinproject.com/paths/full-stack-javascript) on **The Odin Project**
 - Fonts from [Google Fonts](https://fonts.google.com/)
